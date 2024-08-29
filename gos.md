@@ -1,14 +1,5 @@
 # Документация API
 
-## Доступ в admin
-**Прямая ссылка:** _https://api.govcarpets.ru_
-(P.S -> redirect _admin_) 
-
-**Логин:** _GovAddcarRf_
-
-**Пароль:** _g@!2009rf_
-
-
 ## Раздел - Преимущества
 
 
