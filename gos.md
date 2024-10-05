@@ -37,14 +37,25 @@
   "data": {
     "list": [
       {
-        "carpet_runners__title": "Название преимущества",
-        "description": "Описание преимущества"
-      }
+        "carpet_runners__title": "Название преимущества 1",
+        "description": "Описание преимущества 1"
+      },
+      
+      {
+        "carpet_runners__title": "Название преимущества 2",
+        "description": "Описание преимущества 2"
+      },
+
     ],
     "photos": [
       {
-        "title": "Название фото",
-        "photo_path": "https://example.com/media/photo.jpg"
+        "title": "Название фото 1",
+        "photo_path": "https://example.com/media/photo-1.jpg"
+      }, 
+      
+      {
+        "title": "Название фото 1",
+        "photo_path": "https://example.com/media/photo-2.jpg"
       }
     ]
   }
