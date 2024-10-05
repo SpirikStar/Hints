@@ -204,22 +204,66 @@
     - **title**: Название категории.
 
 
-## Акционные позиции в наличии - отображение продуктов на главной странице
+# Акционные позиции в наличии - отображение продуктов на главной странице
+Этот эндпоинт предоставляет список товаров, помеченных как промо.
 
-**Прямая ссылка:** _https://api.govcarpets.ru/get-api/promot-items_
+**Метод:** `GET`
 
-**Тип запроса:** _GET_
+**URL:** `/api/v1/promot-items`
 
-**Параметры GET:** _отсутствуют_
+**Прямая ссылка:** `https://api.govcarpets.ru/api/v1/promot-items`
 
-**Описание:** _настраивается в admin отобраение_
+**Параметры Метода:** _отсутствуют_
 
-![Изображение](https://i.postimg.cc/nLLYPD0k/2024-08-29-16-24-58.png)
+#### Описание
+Эндпоинт возвращает массив товаров, отмеченных как промо, с информацией о каждом товаре, включая его изображение.
+
+#### Пример запроса
+
+
+```json
+{
+  "status": "success",
+  "data": {
+    "promot_items": [
+      {
+        "id": 1,
+        "title": "Товар 1",
+        "article": "Артикул 123",
+        "description": "Описание товара 1",
+        "url_photo": "https://example.com/media/photo1.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Товар 2",
+        "article": "Артикул 456",
+        "description": "Описание товара 2",
+        "url_photo": "https://example.com/media/photo2.jpg"
+      }
+    ]
+  }
+}
+
+```
+
+#### Детали ответа
+
+- **promot_items**: Массив объектов с информацией о товарах.
+    - **id**: Уникальный идентификатор товара.
+    - **title**: Название товара.
+    - **article**: Артикул товара.
+    - **description**: Описание товара.
+    - **url_photo**: Полный URL изображения товара (если изображение отсутствует, возвращается пустая строка).
+
+#### Важные моменты
+
+- Поле **url_photo** формируется динамически с использованием абсолютного URI запроса. Если у товара нет фотографии, это поле будет пустым.
+
 
 
 ## Список продуктов
 
-**Прямая ссылка:** _https://api.govcarpets.ru/get-api/products_
+**Прямая ссылка:** _https://api.govcarpets.ru/api/v1/products_
 
 **Тип запроса:** _GET_
 
@@ -233,16 +277,16 @@
 
 
 ### Получение продуктов по цвету
-> http://api.govcarpets.ru/get-api/products?color=ff0000
+> http://api.govcarpets.ru/api/v1/products?color=ff0000
 
 
 ### Получение продуктов по категории
-> http://api.govcarpets.ru/get-api/products?category=2
+> http://api.govcarpets.ru/api/v1/products?category=2
 
 _Чтобы узнать id категории обратитесь к api https://api.govcarpets.ru/get-api/categories_
 
 ### Получение продуктов по фильтру
-> http://api.govcarpets.ru/get-api/products?select_filter=new
+> http://api.govcarpets.ru/api/v1/products?select_filter=new
 
 #### Список доступных фильтров
 ```python
@@ -254,10 +298,10 @@ _Чтобы узнать id категории обратитесь к api https
 ```
 
 ### Комбинирование параметров
-> http://api.govcarpets.ru/get-api/products?color=ff0000&category=2
+> http://api.govcarpets.ru/api/v1/products?color=ff0000&category=2
 
 ### Получение следующей страницы списка продуктов
-> http://api.govcarpets.ru/get-api/products?page=2
+> http://api.govcarpets.ru/api/v1/products?page=2
 
 ### Изменить кол-во отображения продуктов
-> http://api.govcarpets.ru/get-api/products?page_size=2
+> http://api.govcarpets.ru/api/v1/products?page_size=2
